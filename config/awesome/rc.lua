@@ -5,6 +5,7 @@ awful = require('awful')
 wibox = require('wibox')
 naughty = require("naughty")
 beautiful = require('beautiful')
+rubato = require("lib.rubato")
 dpi = beautiful.xresources.apply_dpi
 beautiful.init('~/.config/awesome/theme/init.lua')
 keys = require('keys')

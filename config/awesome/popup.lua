@@ -1,6 +1,5 @@
 local height = dpi(250)
 local width = dpi(50)
-local rubato = require("lib.rubato")
 
 local prg = wibox.widget {
   max_value = 100,
