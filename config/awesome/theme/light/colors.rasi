@@ -1,5 +1,6 @@
 * {
-  bg: #d9def2;
+  bg: #e3eafee6;
   fg: #51576d;
-  al: #8CAAEE;
+  al: #51576d40;
+  tr: #51576d1A;
 }
