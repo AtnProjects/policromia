@@ -4,7 +4,7 @@ local signals = require("signals")
 local on = beautiful.pri
 local off = beautiful.fg2
 
-local create_button = function(id, icon, comm)
+local create_button = function(id, icon, comm, state)
 	local button = wibox.widget({
 		{
 			{
@@ -20,7 +20,7 @@ local create_button = function(id, icon, comm)
 			bottom = dpi(20),
 		},
 		bg = beautiful.bg3,
-		fg = beautiful.pri,
+		fg = state or on,
 		buttons = {
 			awful.button({}, 1, function()
 				comm()
@@ -46,7 +46,7 @@ end
 
 M.vol = create_button("vol", "\u{eb51}", signals.toggle_vol_mute)
 M.mic = create_button("mic", "\u{eaf0}", signals.toggle_mic_mute)
-M.nig = create_button("nig", "\u{ea51}", nig_callback)
+M.nig = create_button("nig", "\u{ea51}", nig_callback, off)
 M.wal = create_button("wal", "\u{eb0a}", help.randomize_wallpaper)
 
 M.emp = wibox.widget({

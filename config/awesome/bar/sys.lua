@@ -1,4 +1,3 @@
-local help = require("help")
 local M = {}
 
 -- Volume
@@ -59,7 +58,7 @@ local month = tonumber(os.date("%m"))
 local year = tonumber(os.date("%Y"))
 local function deco_cell(widget, flag, date)
 	if flag == "header" then
-		widget:set_markup(help.fg(widget:get_text(), beautiful.pri, "bold"))
+		widget:set_markup(help.fg(widget:get_text(), beautiful.pri, "1000"))
 		return wibox.widget({
 			nil, --cal_btn("\u{f0d9}", nil, { left = dpi(8), right = dpi(8) }),
 			widget,
@@ -94,7 +93,7 @@ local function deco_cell(widget, flag, date)
 			margins = dpi(5),
 		},
 		bg = today and beautiful.pri or beautiful.bg,
-		shape = help.rrect(dpi(5)),
+		shape = gears.shape.circle,
 		widget = wibox.container.background,
 	})
 	return ret
@@ -120,22 +119,15 @@ M.cal = awful.popup({
 	visible = false,
 	ontop = true,
 	placement = function(c)
-		(awful.placement.bottom_left)(
-			c,
-			{
-				margins = {
-					left = beautiful.bar_width + (beautiful.useless_gap * 4),
-					bottom = beautiful.useless_gap * 2,
-				},
-			}
-		)
+		return awful.placement.bottom_left(c, {
+			honor_workarea = true,
+			margins = {
+				bottom = beautiful.useless_gap * 4,
+				left = beautiful.useless_gap * 4,
+			},
+		})
 	end,
 })
-
-awful.placement.bottom_left(
-	pop,
-	{ margins = { left = beautiful.bar_width + (beautiful.useless_gap * 4), bottom = beautiful.useless_gap * 2 } }
-)
 
 M.cal.toggle = function()
 	M.cal.visible = not M.cal.visible
@@ -148,13 +140,13 @@ end)))
 awesome.connect_signal("bat::value", function(status, charge)
 	local icon = "\u{f668}"
 
-	if charge >= 90 then
+	if charge >= 80 then
 		icon = "\u{f721}"
-	elseif charge >= 70 and charge < 90 then
+	elseif charge >= 50 and charge < 80 then
 		icon = "\u{f720}"
-	elseif charge >= 40 and charge < 70 then
+	elseif charge >= 20 and charge < 50 then
 		icon = "\u{f71f}"
-	elseif charge >= 10 and charge < 40 then
+	elseif charge >= 10 and charge < 20 then
 		icon = "\u{f71e}"
 	else
 		icon = "\u{ea34}"
