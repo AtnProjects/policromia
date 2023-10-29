@@ -14,15 +14,15 @@ activethemefile:close()
 help.merge(theme, require("theme." .. theme.activetheme .. ".colors"))
 theme.fontname                        = 'JetBrainsMono Nerd Font' .. " "
 theme.barfontname                     = 'JetBrainsMono Nerd Font' .. " "
-theme.icofontname                     = 'FontAwesome 6 Pro Solid' .. " "
+theme.icofontname                     = 'tabler-icons' .. " "
 theme.fontsize                        = '10'
 theme.barfontsize                     = '12'
-theme.icofontsize                     = '14'
+theme.icofontsize                     = '15'
 theme.font                            = theme.fontname .. theme.fontsize
 theme.barfont                         = theme.barfontname .. theme.barfontsize
 theme.icofont                         = theme.icofontname .. theme.icofontsize
-theme.br                              = dpi(12)
-theme.bar_br                          = dpi(20)
+theme.br                              = dpi(24)
+theme.bar_br                          = dpi(99)
 theme.wall                            = ""
 
 theme.dashboard_width                 = dpi(500)
@@ -54,12 +54,12 @@ theme.taglist_font                    = theme.barfont
 
 theme.menu_bg_normal                  = theme.bg
 theme.menu_bg_focus                   = theme.bg2
+theme.menu_fg_normal                  = theme.fg
 theme.menu_font                       = theme.font
 theme.menu_border_color               = theme.bg
-theme.menu_height                     = dpi(30)
-theme.menu_width                      = dpi(130)
-theme.menu_border_width               = dpi(10)
-theme.menu_submenu_icon               = theme_path .. "menu.svg"
+theme.menu_height                     = dpi(50)
+theme.menu_width                      = dpi(200)
+theme.menu_border_width               = dpi(6)
 
 theme.tasklist_plain_task_name        = true
 

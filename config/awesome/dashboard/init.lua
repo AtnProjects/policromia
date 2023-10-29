@@ -2,24 +2,13 @@ local wid = require("dashboard.wid")
 local sli = require("dashboard.sli")
 local top = require('dashboard.oth')
 
-local sep = wibox.widget {
-  {
-    forced_height = dpi(2),
-    shape = gears.shape.line,
-    widget = wibox.widget.separator
-  },
-  top = dpi(10),
-  bottom = dpi(10),
-  widget = wibox.container.margin
-}
-
 local sliders = wibox.widget {
   {
     {
       {
         {
           font = beautiful.icofont,
-          markup = help.fg('\u{f6a8}', beautiful.pri, "normal"),
+          markup = help.fg('\u{eb51}', beautiful.pri, "normal"),
           forced_width = dpi(25),
           widget = wibox.widget.textbox,
           align = "center"
@@ -31,7 +20,7 @@ local sliders = wibox.widget {
       {
         {
           font = beautiful.icofont,
-          markup = help.fg('\u{f130}', beautiful.pri, "normal"),
+          markup = help.fg('\u{eaf0}', beautiful.pri, "normal"),
           forced_width = dpi(25),
           widget = wibox.widget.textbox,
           align = "center"
@@ -84,12 +73,8 @@ local themeswitcher = wibox.widget {
   widget = wibox.container.background,
 }
 
-local tray = wibox.widget {
-  forced_height = dpi(0),
-  widget = wibox.widget.systray,
-}
-
 local dashboard = awful.popup {
+
   widget = {
     {
       top.ses,
@@ -120,9 +105,14 @@ local dashboard = awful.popup {
   bg = beautiful.bg,
   ontop = true,
   placement = function(c)
-    (awful.placement.bottom_left)(c,
-          { margins = { left = beautiful.bar_width + (beautiful.useless_gap * 4), bottom = beautiful.useless_gap * 2 } })
-  end,
+    return awful.placement.bottom_left(c, {
+      honor_workarea = true,
+      margins = {
+        bottom = beautiful.useless_gap * 2,
+        left = beautiful.useless_gap * 2,
+      },
+    })
+  end
 }
 
 dashboard.toggle = function()

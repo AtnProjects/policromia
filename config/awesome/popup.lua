@@ -62,10 +62,10 @@ local timed = rubato.timed {
 awesome.connect_signal('vol::value', function(mut, vol)
   if mut == 0 then
     prg.color = beautiful.pri
-    icon.markup = help.fg("\u{f6a8}", beautiful.bg3, "normal")
+    icon.markup = help.fg("\u{eb51}", beautiful.bg3, "normal")
   else
     prg.color = beautiful.err
-    icon.markup = help.fg("\u{f6a9}", beautiful.bg3, "normal")
+    icon.markup = help.fg("\u{f1c3}", beautiful.bg3, "normal")
   end
   timed.target = vol
   if pop.visible then

@@ -16,8 +16,8 @@ M.sep = wibox.widget {
 
 M.launch = wibox.widget {
   {
-    markup = "\u{f6e2}",
-    font = beautiful.icofontname .. "12",
+    markup = "\u{f65b}",
+    font = beautiful.icofont,
     align = 'center',
     valign = 'center',
     widget = wibox.widget.textbox
@@ -27,8 +27,8 @@ M.launch = wibox.widget {
 
 M.search = wibox.widget {
   {
-    markup = "\u{f002}",
-    font = beautiful.icofontname .. "12",
+    markup = "\u{eb1c}",
+    font = beautiful.icofont,
     align = 'center',
     valign = 'center',
     widget = wibox.widget.textbox
