@@ -57,9 +57,9 @@ theme.menu_bg_focus                   = theme.bg2
 theme.menu_fg_normal                  = theme.fg
 theme.menu_font                       = theme.font
 theme.menu_border_color               = theme.bg
-theme.menu_height                     = dpi(50)
+theme.menu_height                     = dpi(32)
 theme.menu_width                      = dpi(200)
-theme.menu_border_width               = dpi(6)
+theme.menu_border_width               = dpi(12)
 
 theme.tasklist_plain_task_name        = true
 
@@ -81,7 +81,5 @@ theme.titlebar_close_button_normal    = gears.color.recolor_image(theme_path .. 
 theme.titlebar_close_button_focus     = gears.color.recolor_image(theme_path .. "circle.svg", theme.err)
 theme.tag                             = theme_path .. "tag.svg"
 theme.tag_sel                         = theme_path .. "tag_sel.svg"
-
-theme.playerctl_player                = { "mpd", "%any" }
 
 return theme

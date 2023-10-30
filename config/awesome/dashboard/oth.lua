@@ -103,10 +103,11 @@ M.cal = wibox.widget({
 				align = "center",
 				widget = wibox.widget.textclock,
 			},
+			spacing = dpi(10),
 			layout = wibox.layout.flex.vertical,
 		},
 		widget = wibox.container.margin,
-		margins = dpi(20),
+		margins = { top = dpi(30), bottom = dpi(30), right = dpi(20), left = dpi(20) },
 	},
 	shape = help.rrect(beautiful.br),
 	bg = beautiful.bg2,
@@ -138,12 +139,13 @@ M.wth = wibox.widget({
 					font = beautiful.fontname .. "10",
 					widget = wibox.widget.textbox,
 				},
+			  spacing = dpi(10),
 				layout = wibox.layout.flex.vertical,
 			},
 			layout = wibox.layout.flex.horizontal,
 		},
 		widget = wibox.container.margin,
-		margins = dpi(20),
+		margins = { top = dpi(30), bottom = dpi(30), right = dpi(20), left = dpi(20) },
 	},
 	shape = help.rrect(beautiful.br),
 	bg = beautiful.bg2,
@@ -160,7 +162,7 @@ gears.timer({
 		-- u = ºF, mph
 		local unit = "m"
 		-- empty: auto location
-		local city = ""
+		local city = "alicante"
 		-- seconds
 		local interval = 60 * 30
 		local com = "curl 'wttr.in/" .. city .. "?" .. unit .. "&format=%c+%t+%w'"

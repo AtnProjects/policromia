@@ -17,7 +17,7 @@ client.connect_signal("request::titlebars", function(c)
   }):setup {
     {
       {
-          -- Left
+        -- Left
         {
           -- Title
           align  = 'center',

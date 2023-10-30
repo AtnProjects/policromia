@@ -142,9 +142,9 @@ awesome.connect_signal("bat::value", function(status, charge)
 
 	if charge >= 80 then
 		icon = "\u{f721}"
-	elseif charge >= 50 and charge < 80 then
+	elseif charge >= 55 and charge < 80 then
 		icon = "\u{f720}"
-	elseif charge >= 20 and charge < 50 then
+	elseif charge >= 20 and charge < 55 then
 		icon = "\u{f71f}"
 	elseif charge >= 10 and charge < 20 then
 		icon = "\u{f71e}"

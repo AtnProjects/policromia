@@ -19,7 +19,7 @@ local get_taglist = function(s)
     screen = s,
     filter = awful.widget.taglist.filter.all,
     layout = {
-      spacing = 4,
+      spacing = 2,
       layout = wibox.layout.fixed.vertical,
     },
     style = {

@@ -7,7 +7,7 @@ local menu = {
 
 awful.menu.original_new = awful.menu.new
 function awful.menu.new(...)
-  local ret= awful.menu.original_new(...)
+  local ret = awful.menu.original_new(...)
   ret.wibox.shape = help.rrect(beautiful.br)
   return ret
 end

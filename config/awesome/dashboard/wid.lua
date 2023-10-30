@@ -19,7 +19,7 @@ local create_button = function(id, icon, comm, state)
 			top = dpi(20),
 			bottom = dpi(20),
 		},
-		bg = beautiful.bg3,
+		bg = beautiful.bg2,
 		fg = state or on,
 		buttons = {
 			awful.button({}, 1, function()

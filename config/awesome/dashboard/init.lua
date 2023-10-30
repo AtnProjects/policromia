@@ -30,7 +30,7 @@ local sliders = wibox.widget({
 				layout = wibox.layout.fixed.horizontal,
 			},
 			spacing = dpi(10),
-			layout = wibox.layout.fixed.vertical,
+			layout = wibox.layout.flex.vertical,
 		},
 		widget = wibox.container.margin,
 		margins = dpi(20),
@@ -42,17 +42,15 @@ local sliders = wibox.widget({
 
 local buttons = wibox.widget({
 	{
-		wid.net,
 		wid.vol,
 		wid.mic,
 		wid.nig,
 		wid.wal,
-		wid.scr,
-		spacing = dpi(10),
+		spacing = dpi(15),
 		layout = wibox.layout.flex.horizontal,
 	},
 	layout = wibox.layout.fixed.vertical,
-	spacing = dpi(10),
+	spacing = dpi(15),
 })
 
 local themeswitcher = wibox.widget({
@@ -79,7 +77,6 @@ local dashboard = awful.popup({
 				top.cal,
 				top.wth,
 				spacing = dpi(15),
-				forced_height = dpi(110),
 				layout = wibox.layout.flex.horizontal,
 			},
 			{
