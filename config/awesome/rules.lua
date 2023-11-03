@@ -32,7 +32,7 @@ awful.rules.rules = {
   },
   {
     rule_any = {
-      class = { 'feh', 'Pavucontrol', 'Lxappearance', 'Blueman-manager' },
+      class = { 'feh', 'sxiv', 'Pavucontrol', 'Lxappearance', 'Blueman-manager' },
       role = { 'pop-up', 'GtkFileChooserDialog' },
       type = { 'dialog' }
     },

@@ -1,5 +1,3 @@
-local power = require("power")
-
 local M = {}
 
 local create_button = function(icon, comm)
@@ -65,13 +63,18 @@ M.ses = wibox.widget({
 		},
 		{
 			{
+				create_button("\u{eb0a}", function()
+					awful.spawn.easy_async_with_shell(
+						"sh " .. beautiful.scripts_dir .. "wallpaper.sh -R -f -d " ..
+						beautiful.theme_dir .. beautiful.activetheme .. "/wallpapers", dashboard.toggle)
+				end),
 				create_button("\u{eae2}", function()
 					dashboard.toggle()
 					awful.spawn("betterlockscreen -l", false)
 				end),
 				create_button("\u{eb0d}", function()
-					power.toggle()
-					dashboard.toggle()
+					awful.spawn.easy_async_with_shell(
+						"sh " .. beautiful.scripts_dir .. "power.sh", dashboard.toggle)
 				end),
 				spacing = dpi(15),
 				layout = wibox.layout.fixed.horizontal,
@@ -139,7 +142,7 @@ M.wth = wibox.widget({
 					font = beautiful.fontname .. "10",
 					widget = wibox.widget.textbox,
 				},
-			  spacing = dpi(10),
+				spacing = dpi(10),
 				layout = wibox.layout.flex.vertical,
 			},
 			layout = wibox.layout.flex.horizontal,

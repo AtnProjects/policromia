@@ -23,7 +23,6 @@ end
 local sys = wibox.widget {
   {
     {
-      sys.net,
       sys.vol,
       sys.battery,
       spacing = dpi(20),
@@ -45,7 +44,6 @@ awful.screen.connect_for_each_screen(function(s)
     width = beautiful.bar_width,
     height = s.geometry.height - beautiful.useless_gap * 4,
     margins = { left = beautiful.useless_gap * 2 },
-    shape = help.rrect(beautiful.bar_br),
     screen = s
   }):setup {
     main,

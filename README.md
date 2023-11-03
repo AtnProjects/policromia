@@ -1,31 +1,37 @@
+<div align="center">
+
 # policromia
 
+awesomewm setup
+
+</div>
+
+## table of contents
+
+- [details](#details)
+- [screenshots](#screenshots)
+- [setup](#setup)
+  - [automatic](#automatic)
+  - [manual](#manual)
+
+## details
+
+- os · [arch linux](https://archlinux.org/)
+- shell · [zsh](https://www.zsh.org/)
+- wm · [awesomewm](https://awesomewm.org/)
+- terminal · [kitty](https://sw.kovidgoyal.net/kitty/)
+
+## screenshots
+
 <p align="center">
-  <img src="assets/cyberpunk.png" width="400" />
-  <img src="assets/dark.png" width="400" />
-  <img src="assets/light.png" width="400" />
+  <img src="assets/cyberpunk.png" width="700" />
+  <img src="assets/dark.png" width="700" />
+  <img src="assets/light.png" width="700" />
 </p>
 
-## Details
+## keybindings
 
-- **OS:** [Arch Linux](https://archlinux.org)
-- **WM:** [awesome](https://github.com/awesomeWM/awesome)
-- **Terminal:** [kitty](https://github.com/kovidgoyal/kitty)
-- **Shell:** [zsh](https://www.zsh.org/)
-- **Editor:** [neovim](https://github.com/neovim/neovim)
-- **Compositor:** [picom](https://github.com/yshui/picom)
-- **Application Launcher:** [rofi](https://github.com/davatorium/rofi)
-
-AwesomeWM Modules:
-
-- **[bling](https://github.com/blingcorp/bling)**
-  - Adds new layouts, modules, and widgets that try to focus on window management primarily
-- **[rubato](https://github.com/andOrlando/rubato)**
-  - Create smooth animations with a slope curve for awesomeWM
-
-### Keys
-
-| Shortcut                                                  | Action                    |
+| Keys                                                      | Action                    |
 | :-------------------------------------------------------- | :------------------------ |
 | <kbd>Super</kbd> + <kbd>d</kbd>                           | Toggle dashboard          |
 | <kbd>Super</kbd> + <kbd>e</kbd>                           | Open application launcher |
@@ -38,28 +44,32 @@ AwesomeWM Modules:
 | <kbd>Super</kbd> + <kbd>Control</kbd> + <kbd>-</kbd>      | Decrease window opacity   |
 | <kbd>Super</kbd> + <kbd>Control</kbd> + <kbd>Return</kbd> | Reset window opacity      |
 
-## Setup
+## setup
+
+### automatic
+
+```sh
+sh -c "$(curl -fsSL https://github.com/mdmrk/policromia/install.sh)"
+```
+
+### manual
+
+#### dependencies
 
 Using [paru](https://github.com/Morganamilo/paru) as the AUR helper
 
-### Dependencies
-
 ```
-paru -S \
-    `#core packages` \
-    awesome-git picom-git redshift kitty rofi xclip xorg-xwininfo scrot ttf-jetbrains-mono-nerd noto-fonts noto-fonts-cjk networkmanager betterlockscreen playerctl brightnessctl pipewire pipewire-alsa pipewire-pulse alsa-utils acpi \
-    `#extra packages` \
-    zsh gvfs thunar lsd zoxide bat fzf lxappearance materia-gtk-theme papirus-icon-theme
+paru -S awesome-git picom-git redshift kitty rofi xclip xorg-xwininfo scrot ttf-jetbrains-mono-nerd noto-fonts noto-fonts-cjk networkmanager betterlockscreen playerctl brightnessctl pipewire pipewire-alsa pipewire-pulse alsa-utils acpi zsh gvfs thunar lsd zoxide bat fzf lxappearance materia-gtk-theme papirus-icon-theme
 ```
 
-### Get the repo
+#### clone the repo
 
 ```
-git clone --recurse-submodules https://github.com/mdmrk/policromia
+git clone --depth 1 --recurse-submodules https://github.com/mdmrk/policromia
 cd policromia
 ```
 
-### Install
+#### install
 
 ```
 mkdir -p ~/.config/awesome && cp -r config/awesome/* ~/.config/awesome

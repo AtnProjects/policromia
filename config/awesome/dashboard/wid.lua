@@ -47,7 +47,6 @@ end
 M.vol = create_button("vol", "\u{eb51}", signals.toggle_vol_mute)
 M.mic = create_button("mic", "\u{eaf0}", signals.toggle_mic_mute)
 M.nig = create_button("nig", "\u{ea51}", nig_callback, off)
-M.wal = create_button("wal", "\u{eb0a}", help.randomize_wallpaper)
 
 M.emp = wibox.widget({
 	fg = on,
@@ -85,6 +84,11 @@ M.bat = wibox.widget({
 		widget = wibox.container.margin,
 	},
 	layout = wibox.layout.stack,
+})
+
+M.tra = wibox.widget({
+	base_size = beautiful.systray_base_size,
+	widget = wibox.widget.systray
 })
 
 awesome.connect_signal("vol::value", function(mut, vol)
@@ -133,44 +137,5 @@ local function switch_theme(theme)
 	awful.spawn.easy_async_with_shell("pkill -USR1 kitty")
 	awesome.restart()
 end
-
-local function create_theme(name, markup, btn_fg, btn_bg1, btn_bg2)
-	local register_name = name .. "theme"
-
-	M[register_name] = wibox.widget({
-		{
-			{
-				id = register_name,
-				widget = wibox.widget.textbox,
-				font = beautiful.icofont,
-				markup = markup,
-				halign = "center",
-				align = "center",
-			},
-			widget = wibox.container.margin,
-			top = dpi(15),
-			bottom = dpi(15),
-		},
-		fg = btn_fg,
-		bg = {
-			type = "linear",
-			from = { 0, 0, 0 },
-			to = { 100, 0, 100 },
-			stops = { { 0, btn_bg1 }, { 1, btn_bg2 } },
-		},
-		shape = help.rrect(beautiful.br),
-		widget = wibox.container.background,
-	})
-
-	M[register_name]:buttons(gears.table.join(awful.button({}, 1, function()
-		if beautiful.activetheme ~= name then
-			switch_theme(name)
-		end
-	end)))
-end
-
--- create_theme("dark", "\u{f186}", "#e8e3e3", "#121212", "#1e1e1e")
--- create_theme("light", "\u{f185}", "#51576d", "#d9def2", "#e5eafe")
--- create_theme("cyberpunk", "\u{f54c}", "#fb007a", "#070219", "#130e25")
 
 return M

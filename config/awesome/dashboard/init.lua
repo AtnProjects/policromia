@@ -45,28 +45,11 @@ local buttons = wibox.widget({
 		wid.vol,
 		wid.mic,
 		wid.nig,
-		wid.wal,
 		spacing = dpi(15),
 		layout = wibox.layout.flex.horizontal,
 	},
 	layout = wibox.layout.fixed.vertical,
 	spacing = dpi(15),
-})
-
-local themeswitcher = wibox.widget({
-	{
-		{
-			wid.darktheme,
-			wid.lighttheme,
-			wid.cyberpunktheme,
-			spacing = dpi(10),
-			layout = wibox.layout.flex.horizontal,
-		},
-		margins = dpi(0),
-		widget = wibox.container.margin,
-	},
-	shape = help.rrect(beautiful.br),
-	widget = wibox.container.background,
 })
 
 local dashboard = awful.popup({
@@ -86,7 +69,7 @@ local dashboard = awful.popup({
 				layout = wibox.layout.flex.horizontal,
 			},
 			buttons,
-			themeswitcher,
+			wid.tra,
 			spacing = dpi(15),
 			layout = wibox.layout.fixed.vertical,
 		},
@@ -94,7 +77,6 @@ local dashboard = awful.popup({
 		forced_width = beautiful.dashboard_width,
 		widget = wibox.container.margin,
 	},
-	shape = help.rrect(beautiful.br),
 	visible = false,
 	bg = beautiful.bg,
 	ontop = true,

@@ -1,10 +1,12 @@
 local help = require("help")
 local gfs = require("gears.filesystem")
-local theme_path = gfs.get_configuration_dir() .. "/theme/"
+local theme_path = gfs.get_configuration_dir() .. "theme/"
+local scripts_path = gfs.get_configuration_dir() .. "scripts/"
 
 local theme = {}
 
 theme.theme_dir = theme_path
+theme.scripts_dir = scripts_path
 local activethemefile = io.open(theme.theme_dir .. "activetheme", "r")
 if not activethemefile then
   return
@@ -22,7 +24,6 @@ theme.font                            = theme.fontname .. theme.fontsize
 theme.barfont                         = theme.barfontname .. theme.barfontsize
 theme.icofont                         = theme.icofontname .. theme.icofontsize
 theme.br                              = dpi(24)
-theme.bar_br                          = dpi(99)
 theme.wall                            = ""
 
 theme.dashboard_width                 = dpi(500)
@@ -65,6 +66,7 @@ theme.tasklist_plain_task_name        = true
 
 theme.bg_systray                      = theme.bg
 theme.systray_icon_spacing            = dpi(10)
+theme.systray_base_size               = dpi(26)
 
 theme.notification_bg                 = theme.bg
 theme.notification_fg                 = theme.fg
