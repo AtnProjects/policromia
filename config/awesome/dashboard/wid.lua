@@ -1,6 +1,6 @@
-local M = {}
 local signals = require("signals")
 
+local M = {}
 local on = beautiful.pri
 local off = beautiful.fg2
 
@@ -12,7 +12,6 @@ local create_button = function(id, icon, comm, state)
 				widget = wibox.widget.textbox,
 				font = beautiful.icofont,
 				markup = icon,
-				halign = "center",
 				align = "center",
 			},
 			widget = wibox.container.margin,
@@ -88,7 +87,7 @@ M.bat = wibox.widget({
 
 M.tra = wibox.widget({
 	base_size = beautiful.systray_base_size,
-	widget = wibox.widget.systray
+	widget = wibox.widget.systray,
 })
 
 awesome.connect_signal("vol::value", function(mut, vol)

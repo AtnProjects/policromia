@@ -23,7 +23,7 @@ local get_taglist = function(s)
       layout = wibox.layout.fixed.vertical,
     },
     style = {
-      shape = gears.shape.rectangle,
+      shape = gears.shape.rounded_rect,
     },
     buttons = gears.table.join(
       awful.button({}, 1, function(t) t:view_only() end),
