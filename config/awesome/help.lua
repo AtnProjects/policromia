@@ -40,7 +40,7 @@ help.screenshot = function()
 end
 
 help.truncate = function(count)
-	local COUNT_ABBRS = { "", "k", "M", "B", "T" }
+	local COUNT_ABBRS = { "", "K", "M", "B", "T" }
 	if count < 1000 then
 		return count
 	end
